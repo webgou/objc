@@ -1,0 +1,11 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleGetInfoString = "v1.11, Copyright 2008-2012 Apple Inc.";
+NSHumanReadableCopyright = "Copyright © 2008-2012, Apple Inc.";
+
+chat = "闲聊杂谈";
+lift = "感悟生活";
+programming = "编程开发";
+netusage = "网站应用";
+work = "工作日志";
+
