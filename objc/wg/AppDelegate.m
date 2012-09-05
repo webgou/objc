@@ -10,8 +10,8 @@
 #import "cViewController.h"
 #import "xibViewController.h"
 #import "newViewController.h"
-
-
+#import "xibtTabViewController.h"
+#import "tabViewController.h"
 @implementation AppDelegate
 
 - (void)dealloc
@@ -44,14 +44,24 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     
+    
     UITabBarController *uTabBarController = [[UITabBarController alloc]init];
     NSMutableArray *controlers = [NSMutableArray array];
     NSMutableArray *titles= [NSMutableArray array];
     [titles addObject:@"chat"];
     [titles addObject:@"lift"];
+    [titles addObject:@"more"];
     [titles addObject:@"programming"];
     [titles addObject:@"netusage"];
     [titles addObject:@"work"];
+    
+    
+    
+    tabViewController *xbabv = [[tabViewController alloc]init];
+    UINavigationController * navctlab = [[UINavigationController alloc]initWithRootViewController:xbabv];
+    navctlab.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    [controlers addObject:navctlab];
+    
     
     xibViewController *xbv = [[xibViewController alloc]init];
     UINavigationController * navctl = [[UINavigationController alloc]initWithRootViewController:xbv];
@@ -59,6 +69,15 @@
     [controlers addObject:navctl];
     
     
+    for(int i = 0; i< 3; i++)
+    {
+        cViewController *uv = [[cViewController alloc]initWithTilte:[titles objectAtIndex:i]];
+        UINavigationController * navctl = [[UINavigationController alloc]initWithRootViewController:uv];
+        navctl.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+        [controlers addObject:navctl];
+        //[controlers addObject:uv];
+    }
+    /*
     for(int i = 0; i< 5; i++)
     {
         cViewController *uv = [[cViewController alloc]initWithTilte:[titles objectAtIndex:i]];
@@ -67,14 +86,7 @@
         [controlers addObject:navctl];
         //[controlers addObject:uv];
     }
-    for(int i = 0; i< 5; i++)
-    {
-        cViewController *uv = [[cViewController alloc]initWithTilte:[titles objectAtIndex:i]];
-        UINavigationController * navctl = [[UINavigationController alloc]initWithRootViewController:uv];
-        navctl.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-        [controlers addObject:navctl];
-        //[controlers addObject:uv];
-    }
+     */
      
     //uTabBarController.viewControllers = controlers;
     //uTabBarController.customizableViewControllers = controlers;

@@ -80,7 +80,7 @@
     textRect.origin.y = center.y - textRect.size.height / 2.0;
 
     // Set the fill color of the current context to black 
-    [[UIColor blackColor] setFill];
+    [[UIColor greenColor] setFill];
 
     // The shadow will move 4 points to the right and 3 points down from the text
     CGSize offset = CGSizeMake(4, 3);

@@ -21,8 +21,9 @@ int main(int argc, char *argv[])
         [pc PCName];
         [pc Width];
         [Computer NSCPU];
-        NSLog(@"%d\n",[pc retainCount]);
-        [pc release];
+        pc = [Computer allocWithZone:nil];
+        Computer *pp = [pc copy];
+        NSLog(@"%d  %d \n", [pc retainCount],[pp retainCount]);
         return 1;
         //return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

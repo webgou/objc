@@ -14,6 +14,13 @@
     i = -1;
     NSLog(@"pc %d\n",i);
     [self NoteName];
+
+}
+
+-(id)copy
+{
+    [self retain];
+    return self;
 }
 
 /*
